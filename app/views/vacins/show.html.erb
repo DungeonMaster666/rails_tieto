@@ -1,0 +1,70 @@
+
+<p>
+  <strong>Iest kods:</strong>
+  <%= @vacin.iest_kods %>
+</p>
+
+<p>
+  <strong>Iest nos:</strong>
+  <%= @vacin.iest_nos %>
+</p>
+
+<p>
+  <strong>Vacin date:</strong>
+  <%= @vacin.vacin_date %>
+</p>
+
+<p>
+  <strong>Vacin type:</strong>
+  <%= @vacin.vacin_type %>
+</p>
+
+<p>
+  <strong>Preparat:</strong>
+  <%= @vacin.preparat %>
+</p>
+
+<p>
+  <strong>Vacin posms:</strong>
+  <%= @vacin.vacin_posms %>
+</p>
+
+<p>
+  <strong>Vacin kartas num:</strong>
+  <%= @vacin.vacin_kartas_num %>
+</p>
+
+<p>
+  <strong>Prep daudz:</strong>
+  <%= @vacin.prep_daudz %>
+</p>
+
+<p>
+  <strong>Vakcin ievade:</strong>
+  <%= @vacin.vakcin_ievade %>
+</p>
+
+<p>
+  <strong>Indik vakcin:</strong>
+  <%= @vacin.indik_vakcin %>
+</p>
+
+<p>
+  <strong>Pers age:</strong>
+  <%= @vacin.pers_age %>
+</p>
+
+<p>
+  <strong>Pers dzimums:</strong>
+  <%= @vacin.pers_dzimums %>
+</p>
+
+<p>
+  <strong>Pers skaits:</strong>
+  <%= @vacin.pers_skaits %>
+</p>
+
+<% if @vacin.user == current_user %>
+  <%= link_to 'Edit', edit_vacin_path(@vacin) %> |
+  <% end %>
+  <%= link_to 'Back', vacins_path %>

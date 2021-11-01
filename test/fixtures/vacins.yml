@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  iest_kods: 1
+  iest_nos: MyString
+  vacin_date: 2021-10-28
+  vacin_type: MyString
+  preparat: MyString
+  vacin_posms: MyString
+  vacin_kartas_num: 1
+  prep_daudz: 1.5
+  vakcin_ievade: MyString
+  indik_vakcin: MyString
+  pers_age: 1
+  pers_dzimums: MyString
+  pers_skaits: 1
+
+two:
+  iest_kods: 1
+  iest_nos: MyString
+  vacin_date: 2021-10-28
+  vacin_type: MyString
+  preparat: MyString
+  vacin_posms: MyString
+  vacin_kartas_num: 1
+  prep_daudz: 1.5
+  vakcin_ievade: MyString
+  indik_vakcin: MyString
+  pers_age: 1
+  pers_dzimums: MyString
+  pers_skaits: 1

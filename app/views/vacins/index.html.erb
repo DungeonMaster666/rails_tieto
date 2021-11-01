@@ -1,0 +1,59 @@
+<h1>Vacins</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Vakcinācijas iestādes kods</th>
+      <th>Vakcinācijas iestādes nosaukums</th>
+      <th>Vakcinācijas datums</th>
+      <th>Vakcīnas veids</th>
+      <th>Preparāts</th>
+      <th>Vakcinācijas posms</th>
+      <th>Vakcīnas kārtas numurs</th>
+      <th>Preparāta daudzums ml</th>
+      <th>Vakcīnas ievadīšanas veids</th>
+      <th>Indikācijas vakcinācijai</th>
+      <th>Vakcinētās personas vecums</th>
+      <th>Vakcinētās personas dzimums</th>
+      <th>Vakcinēto personu skaits</th>
+      <th>User Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vacins.each do |vacin| %>
+      <tr>
+        <td><%= vacin.iest_kods %></td>
+        <td><%= vacin.iest_nos %></td>
+        <td><%= vacin.vacin_date %></td>
+        <td><%= vacin.vacin_type %></td>
+        <td><%= vacin.preparat %></td>
+        <td><%= vacin.vacin_posms %></td>
+        <td><%= vacin.vacin_kartas_num %></td>
+        <td><%= vacin.prep_daudz %></td>
+        <td><%= vacin.vakcin_ievade %></td>
+        <td><%= vacin.indik_vakcin %></td>
+        <td><%= vacin.pers_age %></td>
+        <td><%= vacin.pers_dzimums %></td>
+        <td><%= vacin.pers_skaits %></td>
+        <td><%=vacin.user_id %></td>
+        <td><%= link_to 'Show', vacin %></td>
+        <% if vacin.user == current_user %>
+            <td><%= link_to 'Edit', edit_vacin_path(vacin) %></td>
+            <td><%= link_to 'Destroy', vacin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <%end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+  <%= link_to 'New Vacin', new_vacin_path, class: "btn btn-secondary" %>
+
+
+

@@ -1,0 +1,2 @@
+module VacinsHelper
+end
