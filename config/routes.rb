@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   devise_for :users
+  resources :comments
   resources :vacins
   get 'home/about'
   root 'home#index'

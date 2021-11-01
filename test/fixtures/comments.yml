@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment_plot_id: 1
+  comment_user_id: 1
+  comment_text: MyString
+  comment_date: 2021-11-01 21:49:53
+
+two:
+  comment_plot_id: 1
+  comment_user_id: 1
+  comment_text: MyString
+  comment_date: 2021-11-01 21:49:53

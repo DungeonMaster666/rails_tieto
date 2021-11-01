@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment plot:</strong>
+  <%= @comment.plot_id %>
+</p>
+
+<p>
+  <strong>Comment user:</strong>
+  <%= @comment.user_id %>
+</p>
+
+<p>
+  <strong>Comment text:</strong>
+  <%= @comment.comment_text %>
+</p>
+
+<p>
+  <strong>Comment date:</strong>
+  <%= @comment.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

@@ -1,4 +1,4 @@
-<h1>Vacins</h1>
+<h1>COVID19 vakcinācija Latvijā</h1>
 
 <table class="table table-striped table-hover">
   <thead>
@@ -16,7 +16,6 @@
       <th>Vakcinētās personas vecums</th>
       <th>Vakcinētās personas dzimums</th>
       <th>Vakcinēto personu skaits</th>
-      <th>User Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -37,7 +36,7 @@
         <td><%= vacin.pers_age %></td>
         <td><%= vacin.pers_dzimums %></td>
         <td><%= vacin.pers_skaits %></td>
-        <td><%=vacin.user_id %></td>
+
         <td><%= link_to 'Show', vacin %></td>
         <% if vacin.user == current_user %>
             <td><%= link_to 'Edit', edit_vacin_path(vacin) %></td>
