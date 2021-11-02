@@ -232,7 +232,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
-  roo
+  roo (~> 2.8.0)
   roo-xls
   sass-rails (>= 6)
   selenium-webdriver

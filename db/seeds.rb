@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+
+CSV.foreach(Rails.root.join('lib/seed_csv/atbilstiba.csv'), headers: true) do |row|
+  Iestade.create({  iestades_nos: row["nosaukums"] })
+end

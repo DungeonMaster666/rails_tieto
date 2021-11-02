@@ -1,5 +1,6 @@
 <h1>COVID19 vakcinācija Latvijā</h1>
 
+
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -23,7 +24,7 @@
   <tbody>
     <% @vacins.each do |vacin| %>
       <tr>
-        <td><%= vacin.iest_kods %></td>
+        <td><%= vacin.iestade_id %></td>
         <td><%= vacin.iest_nos %></td>
         <td><%= vacin.vacin_date %></td>
         <td><%= vacin.vacin_type %></td>

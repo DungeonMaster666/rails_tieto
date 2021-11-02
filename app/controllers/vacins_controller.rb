@@ -63,6 +63,9 @@ class VacinsController < ApplicationController
     redirect_to vacins_path, notice: "Not Authorized to Edit" if @vacin.nil?
   end
 
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacin
@@ -71,6 +74,6 @@ class VacinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vacin_params
-      params.require(:vacin).permit(:iest_kods, :iest_nos, :vacin_date, :vacin_type, :preparat, :vacin_posms, :vacin_kartas_num, :prep_daudz, :vakcin_ievade, :indik_vakcin, :pers_age, :pers_dzimums, :pers_skaits, :user_id)
+      params.require(:vacin).permit(:iestade_id, :iest_nos, :vacin_date, :vacin_type, :preparat, :vacin_posms, :vacin_kartas_num, :prep_daudz, :vakcin_ievade, :indik_vakcin, :pers_age, :pers_dzimums, :pers_skaits, :user_id)
     end
 end

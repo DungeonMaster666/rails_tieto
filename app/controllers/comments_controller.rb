@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /comments or /comments.json
   def index
     @comments = Comment.all
+
   end
 
 
@@ -13,7 +15,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    #@comment = Comment.new
+    @comment = current_user.comments.build
   end
 
   # GET /comments/1/edit
@@ -22,8 +25,8 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
-
+    #@comment = Comment.new(comment_params)
+    @comment = current_user.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: "Comment was successfully created." }
@@ -55,6 +58,11 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @comment = current_user.comments.find_by(id: params[:id])
+    redirect_to comments_path, notice: "Not Authorized to Edit" if @comment.nil?
   end
 
   private

@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_220236) do
+ActiveRecord::Schema.define(version: 2021_11_02_205856) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment_text"
-    t.integer "user_id"
-    t.integer "plot_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "plot_id"
   end
 
-  create_table "iestades", force: :cascade do |t|
-    t.integer "iestades_kods"
+  create_table "iestades", id: :string, force: :cascade do |t|
     t.string "iestades_nos"
     t.index ["id"], name: "iestades_id_uindex", unique: true
   end
@@ -45,21 +44,21 @@ ActiveRecord::Schema.define(version: 2021_11_01_220236) do
   end
 
   create_table "vacins", force: :cascade do |t|
-    t.integer "iest_kods"
+    t.string "iestade_id"
     t.string "iest_nos"
     t.date "vacin_date"
     t.string "vacin_type"
     t.string "preparat"
     t.string "vacin_posms"
     t.integer "vacin_kartas_num"
-    t.float "prep_daudz"
+    t.string "prep_daudz"
     t.string "vakcin_ievade"
     t.string "indik_vakcin"
     t.integer "pers_age"
     t.string "pers_dzimums"
     t.integer "pers_skaits"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_vacins_on_user_id"
+    t.integer "user_id", default: 0
+    t.index ["id"], name: "index_vacins_on_id"
   end
 
 end
