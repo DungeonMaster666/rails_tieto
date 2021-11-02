@@ -4,7 +4,7 @@ class VacinsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /vacins or /vacins.json
   def index
-    @vacins = Vacin.all
+    @vacins = Vacin.order("vacin_date DESC").page(params[:page])
   end
 
   # GET /vacins/1 or /vacins/1.json

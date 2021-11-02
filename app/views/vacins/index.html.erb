@@ -6,7 +6,7 @@
     <tr>
       <th>Vakcinācijas iestādes kods</th>
       <th>Vakcinācijas iestādes nosaukums</th>
-      <th>Vakcinācijas datums</th>
+      <th>Vakcinācijas datums YYYY-MM-DD</th>
       <th>Vakcīnas veids</th>
       <th>Preparāts</th>
       <th>Vakcinācijas posms</th>
@@ -50,7 +50,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @vacins %>
 <br>
 
   <%= link_to 'New Vacin', new_vacin_path, class: "btn btn-secondary" %>
