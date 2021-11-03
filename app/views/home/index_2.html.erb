@@ -1,0 +1,33 @@
+<h1 class="text-center">STATISTIKA</h1>
+
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+        <%= area_chart (@hash_dates),discrete: true,
+                       title: 'Vakcinācijas aktivitāte', download: { filename: 'coolGraph5' },
+                       xtitle: 'Datums', ytitle: 'Vakcinēto skaits', height: '500px', colors: ["#ab1fb8"]%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+        <%= bar_chart (@hash_iestades_nos), title: 'Visapmeklējamie vakcinācijas iestādes un to filiāli pēc vakcinēto skaita',
+                      download: { filename: 'coolGraph6' }, height: '1000px' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>

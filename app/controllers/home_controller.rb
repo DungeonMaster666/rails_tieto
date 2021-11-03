@@ -41,7 +41,32 @@ class HomeController < ApplicationController
     end
     # hash sorting and my first comment
     @hash_indikacijas = @hash_indikacijas.sort { |l, r| r[1] <=> l[1] }
+    @hash_vakcina['Covishield'] = @hash_vakcina['Covishield(ChAdOx1_nCoV-19)']
+    @hash_vakcina.delete('Covishield(ChAdOx1_nCoV-19)')
   end
 
-  def about; end
+  def index_2
+    @array_dates = Vacin.pluck(:vacin_date).uniq
+    @array_iestades_nos = Vacin.pluck(:iest_nos).uniq
+    @hash_dates = Hash[@array_dates.collect { |item| [item, 0] }]
+    @hash_iestades_nos = Hash[@array_iestades_nos.collect { |item| [item, 0] }]
+
+    Vacin.select(:vacin_date, :pers_skaits, :iest_nos).each do |vacin|
+      @hash_iestades_nos[vacin.iest_nos] += vacin.pers_skaits
+      @hash_dates[vacin.vacin_date] += vacin.pers_skaits
+    end
+    @hash_dates = @hash_dates.sort
+
+    @hash_iestades_nos.delete_if {|key,value| value < 8000}
+    @hash_iestades_nos = @hash_iestades_nos.sort { |l, r| r[1] <=> l[1] }
+
+  end
+
+
+
+
+  def about
+
+  end
+
 end

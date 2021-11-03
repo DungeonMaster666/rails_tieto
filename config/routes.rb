@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :vacins
   get 'home/about'
-  root 'home#index'
+  get 'home/index_2'
+  get 'home/index'
+  root 'home#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -53,9 +53,24 @@
   <div class="col-md-12 text-center">
     <div class="row">
       <div class="col">
-        <%= bar_chart (@hash_vakcina), discrete: true , title: 'Vakcinēto skaits atkarībā no izmantojamas vakcīnas ',
-                      download: { filename: 'coolGraph4' }, height: '300px' %>
+        <%= bar_chart (@hash_vakcina), title: 'Vakcinēto skaits atkarībā no izmantojamas vakcīnas ',
+                      download: { filename: 'coolGraph4' }, height: '500px' %>
       </div>
     </div>
   </div>
 </div>
+
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+<%= link_to 'Skatīties tālāk', home_index_2_path, class: "btn btn-info" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>
