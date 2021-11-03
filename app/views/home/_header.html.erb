@@ -8,9 +8,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to 'COVID Statistika', home_index_path, class:"nav-link" %>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href= "#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <h7>COVID Statistika</h7>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to 'COVID Statistika', home_index_path, class:"dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to 'Statistikas turpinājums', home_index_2_path, class:"dropdown-item" %></li>
+          </ul>
         </li>
+
+
+
         <li class="nav-item">
           <%= link_to 'Vakcinācijas Dati', vacins_path, class:"nav-link" %>
         </li>

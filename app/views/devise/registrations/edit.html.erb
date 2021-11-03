@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    <h4> Edit Profile </h4>
+    <h4> Rediģēt profilu </h4>
   </div>
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -8,7 +8,7 @@
 
       <div class="field form-group">
         <% f.label :email %><br />
-        <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "E-mail", autofocus: true, autocomplete: "email" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -17,7 +17,7 @@
 
       <div class="field form-group">
         <% f.label :password %><br />
-        <%= f.password_field :password, class: "form-control", placeholder: "New Password (leave blank if you don't want to change it)", autocomplete: "new-password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Jauna parole (atstāj tukšu, ja negribi neko mainīt)", autocomplete: "new-password" %>
         <% if @minimum_password_length %>
 
         <% end %>
@@ -26,17 +26,17 @@
 
       <div class="field form-group">
         <% f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "New Password Confirmation", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Jaunas paroles apstiprināšana", autocomplete: "new-password" %>
       </div>
       <br />
       <div class="field form-group">
         <% f.label :current_password %>
         <br/>
-        <%= f.password_field :current_password, class: "form-control", placeholder: "Current Password", autocomplete: "current-password" %>
+        <%= f.password_field :current_password, class: "form-control", placeholder: "Tagadēja parole", autocomplete: "current-password" %>
       </div>
       <br />
       <div class="actions">
-        <%= f.submit "Update",class:'btn btn-secondary' %>
+        <%= f.submit "Mainīt",class:'btn btn-secondary' %>
       </div>
     <% end %>
   </div>
@@ -51,13 +51,24 @@
 
 <div class="card">
   <div class="card-header">
-    <h4>Cancel my account</h4>
+    <h4>Dzēst profilu</h4>
   </div>
   <div class="card-body">
-    <h6 class="card-title">Unhappy?</h6>
-    <p class="card-text"><%= button_to "Cancel my account", registration_path(resource_name),class:'btn btn-danger', data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <h6 class="card-title">Nepatika?</h6>
+    <p class="card-text"><%= button_to "Dzēst profilu", registration_path(resource_name),class:'btn btn-danger', data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>
 </div>
 
 <br/>
-<%= link_to "Back", :back %>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col">
+<%= link_to "Atpakaļ", :back ,class:'btn btn-secondary'%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>

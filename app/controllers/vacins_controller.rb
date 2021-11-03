@@ -27,7 +27,7 @@ class VacinsController < ApplicationController
     @vacin = current_user.vacins.build(vacin_params)
     respond_to do |format|
       if @vacin.save
-        format.html { redirect_to @vacin, notice: "Vacin was successfully created." }
+        format.html { redirect_to @vacin, notice: "Ieraksts ir pievienots!" }
         format.json { render :show, status: :created, location: @vacin }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class VacinsController < ApplicationController
   def update
     respond_to do |format|
       if @vacin.update(vacin_params)
-        format.html { redirect_to @vacin, notice: "Vacin was successfully updated." }
+        format.html { redirect_to @vacin, notice: "Ieraksts ir izmainīts!" }
         format.json { render :show, status: :ok, location: @vacin }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,14 +53,14 @@ class VacinsController < ApplicationController
   def destroy
     @vacin.destroy
     respond_to do |format|
-      format.html { redirect_to vacins_url, notice: "Vacin was successfully destroyed." }
+      format.html { redirect_to vacins_url, notice: "Ieraksts ir dzēsts!" }
       format.json { head :no_content }
     end
   end
 
   def correct_user
     @vacin = current_user.vacins.find_by(id: params[:id])
-    redirect_to vacins_path, notice: "Not Authorized to Edit" if @vacin.nil?
+    redirect_to vacins_path, notice: "Nav tiesību rediģēt" if @vacin.nil?
   end
 
 

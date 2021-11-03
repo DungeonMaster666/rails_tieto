@@ -5,37 +5,41 @@
     <div class="card-header">
 
 
-      <h4>Log in</h4>
+      <h4>Autentifikācija</h4>
 
 
     </div>
     <div class="card-body">
       <div class="field form-group" >
         <% f.label :email %><br />
-        <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "E-mail", autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="field form-group">
         <% f.label :password %><br />
-        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "current-password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Parole", autocomplete: "current-password" %>
       </div>
       <br/>
       <% if devise_mapping.rememberable? %>
         <div class="field form-check">
           <%= f.check_box :remember_me, class: "form-check-input" %>
-          <%= f.label :remember_me %>
+          <%= f.label 'Atceries Mani' %>
         </div>
       <% end %>
       <br/>
 
       <div class="actions">
-        <%= f.submit "Log in", class:'btn btn-secondary' %>
+        <%= f.submit "Pieslēgties", class:'btn btn-secondary' %>
       </div>
 
 <% end %>
+<br/>
+
+<%= render "devise/shared/links" %>
+
     </div>
   </div>
 
 
 
-<%= render "devise/shared/links" %>
+

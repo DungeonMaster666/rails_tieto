@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: "Comment was successfully created." }
+        format.html { redirect_to @comment, notice: "Kommentārs ir pievienots!" }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: "Comment was successfully updated." }
+        format.html { redirect_to @comment, notice: "Kommentārs ir izmainīts!" }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,14 +55,14 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to comments_url, notice: "Kommentārs ir dzēsts!" }
       format.json { head :no_content }
     end
   end
 
   def correct_user
     @comment = current_user.comments.find_by(id: params[:id])
-    redirect_to comments_path, notice: "Not Authorized to Edit" if @comment.nil?
+    redirect_to comments_path, notice: "Nav tiesību rediģēt" if @comment.nil?
   end
 
   private
