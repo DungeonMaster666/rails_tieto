@@ -1,2 +1,61 @@
-<h1>HELLO WORLD</h1>
-Test webpage
+<h1 class="text-center">STATISTIKA</h1>
+
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+<%= line_chart ([{name: '0.3 ml',data: @hash_zerothree},{name: '0.5 ml',data: @hash_zerofive}]),discrete: true,
+               title: 'Vakcinēto cilvēku skaits atkarībā no vakcīnas daudzuma', download: { filename: 'coolGraph' },
+               xtitle: 'Cilvēku vecums', ytitle: 'Vakcinēto skaits', height: '500px'%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+<%= line_chart ([{name: 'S',data: @hash_sex_s},{name: 'V',data: @hash_sex_v}]),discrete: true,
+               title: 'Vakcinēto cilvēku skaits atkarībā no dzimuma', download: { filename: 'coolGraph2' },
+               xtitle: 'Cilvēku vecums', ytitle: 'Vakcinēto skaits', height: '500px', colors: ["#ab1fb8","#00ed2b"]%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+<%= pie_chart (@hash_indikacijas), donut: true, title: 'Vakcinēto cilvēku skaits atkarībā no vakcinācijas cēloņa',
+              download: { filename: 'coolGraph3' }, height: '700px' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid bg-light">
+  <div class="col-md-12 text-center">
+    <div class="row">
+      <div class="col">
+        <%= bar_chart (@hash_vakcina), discrete: true , title: 'Vakcinēto skaits atkarībā no izmantojamas vakcīnas ',
+                      download: { filename: 'coolGraph4' }, height: '300px' %>
+      </div>
+    </div>
+  </div>
+</div>

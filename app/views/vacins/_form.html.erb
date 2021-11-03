@@ -1,25 +1,33 @@
 <%= form_with(model: vacin) do |form| %>
   <% if vacin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(vacin.errors.count, "error") %> prohibited this vacin from being saved:</h2>
 
-      <ul>
+    <div class="card">
+      <h5 class="card-header"><%= pluralize(vacin.errors.count, "error") %> prohibited this vacin from being saved:</h5>
+      <div class="card-body">
+        <div id="error_explanation">
+        </div>
+        <p class="card-text">
+        <ul>
         <% vacin.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
+        </p>
+      </div>
     </div>
+
+
   <% end %>
 
   <div class="field form-group">
 <br/>
-    <%= form.number_field :iestade_id, class: "form-control", placeholder: "Vakcinācijas iestādes kods" %>
+    <%= form.number_field :iestade_id, class: "form-control", placeholder: "Vakcinācijas iestādes kods", :required => true%>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.text_field :iest_nos, class: "form-control", placeholder: "Vakcinācijas iestādes nosaukums" %>
+    <%= form.text_field :iest_nos, class: "form-control", placeholder: "Vakcinācijas iestādes nosaukums", :required => true %>
   </div>
 
   <div class="field form-group">
@@ -28,71 +36,71 @@
     <br/>
     <br/>
 
-    <%= form.date_select :vacin_date, class: "form-control", placeholder: "Vakcinācijas datums" %>
+    <%= form.date_select :vacin_date, class: "form-control", placeholder: "Vakcinācijas datums", :required => true %>
   </div>
 
   <div class="field form-group">
     <br/>
-    <%= form.text_field :vacin_type, class: "form-control", placeholder: "Vakcīnas veids" %>
-  </div>
-
-  <div class="field form-group">
-    <br/>
-
-    <%= form.text_field :preparat, class: "form-control", placeholder: "Preparāts" %>
-  </div>
-
-
-
-
-
-  <div class="field form-group">
-    <br/>
-
-    <%= form.text_field :vacin_posms, class: "form-control", placeholder: "Vakcinācijas posms" %>
-
+    <%= form.text_field :vacin_type, class: "form-control", placeholder: "Vakcīnas veids", :required => true %>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.number_field :vacin_kartas_num, class: "form-control", placeholder: "Vakcīnas kārtas numurs" %>
+    <%= form.text_field :preparat, class: "form-control", placeholder: "Preparāts", :required => true  %>
+  </div>
+
+
+
+
+
+  <div class="field form-group">
+    <br/>
+
+    <%= form.text_field :vacin_posms, class: "form-control", placeholder: "Vakcinācijas posms", :required => true  %>
+
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.text_field :prep_daudz, class: "form-control", placeholder: "Preparāta daudzums ml" %>
+    <%= form.number_field :vacin_kartas_num, class: "form-control", placeholder: "Vakcīnas kārtas numurs", :required => true  %>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.text_field :vakcin_ievade, class: "form-control", placeholder: "Vakcīnas ievadīšanas veids" %>
+    <%= form.text_field :prep_daudz, class: "form-control", placeholder: "Preparāta daudzums ml", :required => true  %>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.text_field :indik_vakcin, class: "form-control", placeholder: "Indikācijas vakcinācijai" %>
+    <%= form.text_field :vakcin_ievade, class: "form-control", placeholder: "Vakcīnas ievadīšanas veids", :required => true  %>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.number_field :pers_age, class: "form-control", placeholder: "Vakcinētās personas vecums" %>
+    <%= form.text_field :indik_vakcin, class: "form-control", placeholder: "Indikācijas vakcinācijai", :required => true  %>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.text_field :pers_dzimums, class: "form-control", placeholder: "Vakcinētās personas dzimums" %>
+    <%= form.number_field :pers_age, class: "form-control", placeholder: "Vakcinētās personas vecums", :required => true  %>
   </div>
 
   <div class="field form-group">
     <br/>
 
-    <%= form.number_field :pers_skaits, class: "form-control", placeholder: "Vakcinēto personu skaits" %>
+    <%= form.text_field :pers_dzimums, class: "form-control", placeholder: "Vakcinētās personas dzimums", :required => true  %>
+  </div>
+
+  <div class="field form-group ">
+    <br/>
+
+    <%= form.number_field :pers_skaits, class: "form-control", placeholder: "Vakcinēto personu skaits", :required => true  %>
   </div>
 
 

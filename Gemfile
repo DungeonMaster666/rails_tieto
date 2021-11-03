@@ -33,7 +33,7 @@ gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'thor'
 
 gem 'roo-xls'
-
+gem "chartkick"
 
 
 group :development, :test do
