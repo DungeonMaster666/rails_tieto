@@ -1,66 +1,66 @@
 
 <p>
-  <strong>Iest kods:</strong>
+  <strong>Vakcinācijas iestādes kods:</strong>
   <%= @vacin.iestade_id %>
 </p>
 
 <p>
-  <strong>Iest nos:</strong>
+  <strong>Vakcinācijas iestādes nosaukums:</strong>
   <%= @vacin.iest_nos %>
 </p>
 
 <p>
-  <strong>Vacin date:</strong>
+  <strong>Vakcinācijas datums YYYY-MM-DD:</strong>
   <%= @vacin.vacin_date %>
 </p>
 
 <p>
-  <strong>Vacin type:</strong>
+  <strong>Vakcīnas veids:</strong>
   <%= @vacin.vacin_type %>
 </p>
 
 <p>
-  <strong>Preparat:</strong>
+  <strong>Preparāts:</strong>
   <%= @vacin.preparat %>
 </p>
 
 <p>
-  <strong>Vacin posms:</strong>
+  <strong>Vakcinācijas posms:</strong>
   <%= @vacin.vacin_posms %>
 </p>
 
 <p>
-  <strong>Vacin kartas num:</strong>
+  <strong>Vakcīnas kārtas numurs:</strong>
   <%= @vacin.vacin_kartas_num %>
 </p>
 
 <p>
-  <strong>Prep daudz:</strong>
+  <strong>Preparāta daudzums ml:</strong>
   <%= @vacin.prep_daudz %>
 </p>
 
 <p>
-  <strong>Vakcin ievade:</strong>
+  <strong>Vakcīnas ievadīšanas veids:</strong>
   <%= @vacin.vakcin_ievade %>
 </p>
 
 <p>
-  <strong>Indik vakcin:</strong>
+  <strong>Indikācijas vakcinācijai:</strong>
   <%= @vacin.indik_vakcin %>
 </p>
 
 <p>
-  <strong>Pers age:</strong>
+  <strong>Vakcinētās personas vecums:</strong>
   <%= @vacin.pers_age %>
 </p>
 
 <p>
-  <strong>Pers dzimums:</strong>
+  <strong>Vakcinētās personas dzimums:</strong>
   <%= @vacin.pers_dzimums %>
 </p>
 
 <p>
-  <strong>Pers skaits:</strong>
+  <strong>Vakcinēto personu skaits:</strong>
   <%= @vacin.pers_skaits %>
 </p>
 
@@ -69,5 +69,3 @@
   <% end %>
   <%= link_to 'Back', vacins_path %>
 
-
-<%= render 'form', vacin: @vacin %>

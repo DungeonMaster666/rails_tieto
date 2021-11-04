@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :set_comment, only: %i[show edit update destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /comments or /comments.json
   def index
@@ -9,14 +10,14 @@ class CommentsController < ApplicationController
   end
 
 
+
   # GET /comments/1 or /comments/1.json
   def show
   end
 
   # GET /comments/new
   def new
-    #@comment = Comment.new
-    @comment = current_user.comments.build
+    @comment = Comment.new(:plot_id => params[:plot])
   end
 
   # GET /comments/1/edit

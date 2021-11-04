@@ -10,11 +10,28 @@ import "channels"
 import "chartkick/chart.js"
 
 Rails.start()
-Turbolinks.start()
+
 ActiveStorage.start()
-//= require jquery3
-//= require popper
 //= require bootstrap-sprockets
 //= require jquery3
 //= require popper
-//= require bootstrap
+//= require bootstrap-datepicker
+
+function toggleDropdown(element) {
+    var dropdown = new Dropdown(element);
+    dropdown.toggle();
+}
+
+document.addEventListener('turbolinks:load', function() {
+    var dropdown_buttons = document.querySelectorAll('[data-toggle="dropdown"]');
+
+    dropdown_buttons.forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            toggleDropdown(this);
+        });
+    });
+});
+
+

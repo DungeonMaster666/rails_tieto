@@ -31,7 +31,6 @@ gem 'devise', '~> 4.8'
 gem "roo", "~> 2.8.0"
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'thor'
-
 gem 'roo-xls'
 gem "chartkick"
 gem 'bootstrap', :git=> 'https://github.com/twbs/bootstrap-rubygem'

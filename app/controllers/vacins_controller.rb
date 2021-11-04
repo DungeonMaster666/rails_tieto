@@ -11,6 +11,8 @@ class VacinsController < ApplicationController
   def show
   end
 
+
+
   # GET /vacins/new
   def new
     #@vacin = Vacin.new

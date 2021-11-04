@@ -9,11 +9,59 @@
 <%= line_chart ([{name: '0.3 ml',data: @hash_zerothree},{name: '0.5 ml',data: @hash_zerofive}]),discrete: true,
                title: 'Vakcinēto cilvēku skaits atkarībā no vakcīnas daudzuma', download: { filename: 'coolGraph' },
                xtitle: 'Cilvēku vecums', ytitle: 'Vakcinēto skaits', height: '500px'%>
+        <h6><%= Plot.where(plot_name: 'Graph1').select(:plot_name) %></h6>
       </div>
     </div>
-  </div>
-</div>
 
+
+  </div>
+
+</div>
+<div class="container-fluid bg-light">
+  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Kommentāri
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <th>E-mail</th>
+          <th>Kommentārs</th>
+          <th>Datums</th>
+          <th colspan="1"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <%# COMMENT BLOCK :) %>
+
+        <% plot1 = 1 %>
+        <% @comments.each do |comment| %>
+          <% if plot1 == comment.plot_id %>
+
+            <tr>
+              <td><%= comment.user.email %></td>
+              <td><%= comment.comment_text %></td>
+              <td><%= comment.created_at %></td>
+              <% if comment.user == current_user %>
+                <td><%= link_to 'Rediģēt', edit_comment_path(comment), class: "btn btn-warning" %></td>
+              <% end %>
+            </tr>
+
+          <% end %>
+        <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'Pievienot Kommentāru', new_comment_path(:plot => plot1), class: "btn btn-info" %>
+      <br/>
+      <br/>
+    </div>
+  </div>
+  <br/>
+
+
+</div>
 <br/>
 <br/>
 <br/>
@@ -66,7 +114,7 @@
   <div class="col-md-12 text-center">
     <div class="row">
       <div class="col">
-<%= link_to 'Skatīties tālāk', home_index_2_path, class: "btn btn-info" %>
+<%= link_to 'Skatīties tālāk', home_index_2_path, class: "btn btn-info", data: { turbolinks: "false"} %>
       </div>
     </div>
   </div>
@@ -74,3 +122,4 @@
 
 <br/>
 <br/>
+

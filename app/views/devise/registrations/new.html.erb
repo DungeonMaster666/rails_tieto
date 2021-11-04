@@ -2,7 +2,7 @@
   <div class="card-header">
 
 
-    <h2>Sign up</h2>
+    <h2>Reģistrācija</h2>
 
 
   </div>
@@ -12,33 +12,43 @@
 
       <div class="field form-group">
         <% f.label :email %><br />
-        <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "E-mail", autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="field form-group">
         <% f.label :password %>
         <% if @minimum_password_length %>
         <% end %><br />
-        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Parole", autocomplete: "new-password" %>
       </div>
 
       <div class="field form-group">
         <% f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Apstiprini paroli", autocomplete: "new-password" %>
       </div>
 <br/>
+      <div class="container bg-light">
+        <div class="row">
+          <div class="col">
       <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-secondary' %>
+        <%= f.submit "Reģistrēties", class: 'btn btn-secondary' %>
       </div>
+          </div>
+        </div>
+      </div>
+      <br/>
+
+        <%= render "devise/shared/links" %>
+
     <% end %>
   </div>
 </div>
 
 
+<br/>
 
 
 
 
 
 
-<%= render "devise/shared/links" %>

@@ -63,8 +63,8 @@
 
       <td><%= link_to 'Radīt', vacin , class: "btn btn-secondary"%></td>
       <% if vacin.user == current_user %>
-        <td><%= link_to 'Mainīt', edit_vacin_path(vacin) %></td>
-        <td><%= link_to 'Dzēst', vacin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mainīt', edit_vacin_path(vacin), class: "btn btn-info" %></td>
+        <td><%= link_to 'Dzēst', vacin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       <% else %>
         <td></td>
         <td></td>
@@ -88,7 +88,6 @@
       <div class="col">
       </div>
     </div>
-
 
 
   </div>

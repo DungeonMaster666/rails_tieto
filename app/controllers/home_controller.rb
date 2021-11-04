@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
+
+
+
   def index
+    $plot_hash = { plot1: 1, plot2: 2, plot3: 3, plot4: 4, plot5: 5, plot6: 6 }
     array_of_age = (1..130).to_a
     @hash_zerofive = Hash[array_of_age.collect { |item| [item, 0] }]
     @hash_zerothree = Hash[array_of_age.collect { |item| [item, 0] }]
@@ -43,6 +47,10 @@ class HomeController < ApplicationController
     @hash_indikacijas = @hash_indikacijas.sort { |l, r| r[1] <=> l[1] }
     @hash_vakcina['Covishield'] = @hash_vakcina['Covishield(ChAdOx1_nCoV-19)']
     @hash_vakcina.delete('Covishield(ChAdOx1_nCoV-19)')
+
+
+    @plots = Plot.all
+    @comments = Comment.order('created_at DESC').all
   end
 
   def index_2

@@ -1,8 +1,8 @@
 <%= form_with(model: vacin) do |form| %>
   <% if vacin.errors.any? %>
-
+<br/>
     <div class="card">
-      <h5 class="card-header"><%= pluralize(vacin.errors.count, "error") %> prohibited this vacin from being saved:</h5>
+      <h5 class="card-header"><%= pluralize(vacin.errors.count, "kļūda") %> nedod saglabāt ierakstu:</h5>
       <div class="card-body">
         <div id="error_explanation">
         </div>
@@ -33,10 +33,11 @@
     <div class="field form-group">
       <br/>
       <h5>Vakcinācijas datums</h5>
-      <br/>
 
 
-      <%= form.date_select :vacin_date, class: "form-control", :required => true %>
+
+
+      <%= form.date_field :vacin_date, class: 'form-control' , :required => true, :value => Time.now.strftime('%Y-%m-%d')  %>
     </div>
 
     <div class="field form-group">
