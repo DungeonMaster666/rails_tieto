@@ -1,0 +1,43 @@
+<div class="container-fluid bg-light">
+  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Kommentāri
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <th>E-mail</th>
+          <th>Kommentārs</th>
+          <th>Datums</th>
+          <th colspan="1"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <%# COMMENT BLOCK :) %>
+
+        <% plot_render %>
+        <% @comments.each do |comment| %>
+          <% if plot_render == comment.plot_id %>
+
+            <tr>
+              <td><%= comment.user.email %></td>
+              <td><%= comment.comment_text %></td>
+              <td><%= comment.created_at %></td>
+              <% if comment.user == current_user %>
+                <td><%= link_to 'Rediģēt', edit_comment_path(comment), class: "btn btn-warning" %></td>
+                <td><%= link_to 'Dzēst', comment, method: :delete, class: "btn btn-danger", data: { confirm: 'Jūs esat pārliecināti?' } %></td>
+              <% end %>
+            </tr>
+
+          <% end %>
+        <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'Pievienot Kommentāru', new_comment_path(:plot => plot_render), class: "btn btn-info" %>
+      <br/>
+    </div>
+  </div>
+  <br/>
+</div>

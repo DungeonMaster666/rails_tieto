@@ -5,8 +5,8 @@ class HomeController < ApplicationController
 
 
   def index
-    $plot_hash = { plot1: 1, plot2: 2, plot3: 3, plot4: 4, plot5: 5, plot6: 6 }
-    array_of_age = (1..130).to_a
+
+    array_of_age = (1..125).to_a
     @hash_zerofive = Hash[array_of_age.collect { |item| [item, 0] }]
     @hash_zerothree = Hash[array_of_age.collect { |item| [item, 0] }]
     @hash_sex_s = Hash[array_of_age.collect { |item| [item, 0] }]
@@ -67,6 +67,8 @@ class HomeController < ApplicationController
 
     @hash_iestades_nos.delete_if {|key,value| value < 8000}
     @hash_iestades_nos = @hash_iestades_nos.sort { |l, r| r[1] <=> l[1] }
+    @plots = Plot.all
+    @comments = Comment.order('created_at DESC').all
 
   end
 
@@ -74,7 +76,6 @@ class HomeController < ApplicationController
 
 
   def about
-
   end
 
 end

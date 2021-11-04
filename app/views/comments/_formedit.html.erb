@@ -16,7 +16,6 @@
       </p>
     </div>
   </div>
-
   <% end %>
   <br/><br/>
   <div class="container">
@@ -24,7 +23,7 @@
       <div class="col">
         <div class="card">
           <div class="card-header">
-            <h2>Pievienot Kommentāru</h2>
+            <h2>Rediģēt Kommentāru</h2>
           </div>
           <div class="card-body">
             <br/>
@@ -34,7 +33,7 @@
             </div>
             <br/>
             <div class="actions">
-              <%= form.submit "Pievienot Kommentāru", class:'btn btn-primary'%>
+              <%= form.submit "Beigt Rediģēšanu", class:'btn btn-primary'%>
 
               <br/><br/>
 
@@ -45,12 +44,12 @@
 
         <div class="field">
           <% form.label :plot_id %>
-          <%= form.number_field :plot_id, id: :comment_plot_id,type: :hidden  %>
+          <%=  form.number_field :plot_id, id: :comment_plot_id, type: :hidden %>
         </div>
 
         <div class="field">
           <% form.label :user_id %>
-          <% form.number_field :user_id, id: :comment_user_id, value: current_user.id, type: :hidden %>
+          <%= form.number_field :user_id, id: :comment_user_id, value: current_user.id, type: :hidden%>
         </div>
       </div>
       <div class="col">

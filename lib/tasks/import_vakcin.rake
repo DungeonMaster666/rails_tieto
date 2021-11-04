@@ -25,7 +25,7 @@ namespace :import_vakcin do
     file.close
 
     data = Roo::Spreadsheet.open('lib/seed_csv/vacin_data.xlsx')
-
+    Vacin.delete_all
     @headers = false
     data.each(iestade_id: 'Vakcinācijas iestādes kods', iest_nos: 'Vakcinācijas iestādes nosaukums', vacin_date: 'Vakcinācijas datums', vacin_type: 'Vakcīnas veids', preparat: 'Preparāts', vacin_posms: 'Vakcinācijas posms', vacin_kartas_num: 'Vakcīnas kārtas numurs', prep_daudz: 'Preparāta daudzums ml', vakcin_ievade: 'Vakcīnas ievadīšanas veids', indik_vakcin: 'Indikācijas vakcinācijai', pers_age: 'Vakcinētās personas vecums', pers_dzimums: 'Vakcinētās personas dzimums', pers_skaits: 'Vakcinēto personu skaits') do |hash|
       if @headers == false
@@ -39,7 +39,7 @@ namespace :import_vakcin do
       Plot.delete_all
       Plot.create([{ :plot_name => 'Graph1', :plot_country=> 'Latvija', :plot_updated_time=> Time.now },{ :plot_name => 'Graph2', :plot_country=> 'Latvija', :plot_updated_time=> Time.now },
                    { :plot_name => 'Graph3', :plot_country=> 'Latvija', :plot_updated_time=> Time.now }, { :plot_name => 'Graph4', :plot_country=> 'Latvija', :plot_updated_time=> Time.now },
-                   { :plot_name => 'Graph5', :plot_country=> 'Latvija', :plot_updated_time=> Time.now }])
+                   { :plot_name => 'Graph5', :plot_country=> 'Latvija', :plot_updated_time=> Time.now }, {:plot_name => 'Graph6', :plot_country=> 'Latvija', :plot_updated_time=> Time.now}])
 
 
       end
