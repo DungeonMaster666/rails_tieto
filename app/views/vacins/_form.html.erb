@@ -21,93 +21,88 @@
 
 
   <br/>
-  <div class="field form-floating ">
+  <div class="field form-group ">
       <%= form.number_field :iestade_id, class: "form-control", placeholder: "Vakcinācijas iestādes kods", :required => true%>
-      <label for="floatingInput">Vakcinācijas iestādes kods</label>
     </div>
   <br/>
-  <div class="field form-floating ">
+  <div class="field form-group ">
 
 
       <%= form.text_field :iest_nos, class: "form-control", placeholder: "Vakcinācijas iestādes nosaukums", :required => true %>
-    <label for="floatingInput">Vakcinācijas iestādes nosaukums</label>
 
   </div>
   <br/>
-    <div class="field form-floating">
 
-      <%= form.date_field :vacin_date, class: 'form-control' , :required => true, :value => Time.now.strftime('%Y-%m-%d')  %>
-      <label for="floatingInput">Vakcinācijas datums</label>
+  <div class="card">
+    <div class="card-body">
+      <div class="field form-group">
+        <h5>Vakcinācijas datums</h5>
+        <br/>
+        <%= form.date_field :vacin_date, class: 'form-control' , :required => true, :value => Time.now.strftime('%Y-%m-%d')  %>
+      </div>
     </div>
+  </div>
+
+
   <br/>
 
-    <div class="field form-floating">
+    <div class="field form-group">
       <%= form.text_field :vacin_type, class: "form-control", placeholder: "Vakcīnas veids", value: "COVID-19",:required => true %>
-      <label for="floatingInput">Vakcīnas veids</label>
     </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.text_field :preparat, class: "form-control", placeholder: "Preparāts", :required => true  %>
-    <label for="floatingInput">Preparāts</label>
   </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.text_field :vacin_posms, class: "form-control", placeholder: "Vakcinācijas posms", :required => true  %>
-    <label for="floatingInput">Vakcinācijas posms</label>
 
   </div>
 
   <br/>
 
-    <div class="field form-floating">
+    <div class="field form-group">
       <%= form.number_field :vacin_kartas_num, class: "form-control", placeholder: "Vakcīnas kārtas numurs", :required => true  %>
-      <label for="floatingInput">Vakcīnas kārtas numurs</label>
     </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.text_field :prep_daudz, class: "form-control", placeholder: "Preparāta daudzums ml", :required => true  %>
-      <label for="floatingInput">Preparāta daudzums ml</label>
     </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.text_field :vakcin_ievade, class: "form-control", placeholder: "Vakcīnas ievadīšanas veids", :required => true  %>
-    <label for="floatingInput">Vakcīnas ievadīšanas veids</label>
   </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.text_field :indik_vakcin, class: "form-control", placeholder: "Indikācijas vakcinācijai", :required => true  %>
-      <label for="floatingInput">Indikācijas vakcinācijai</label>
     </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.number_field :pers_age, class: "form-control", placeholder: "Vakcinētās personas vecums", :required => true  %>
-    <label for="floatingInput">Vakcinētās personas vecums</label>
   </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.text_field :pers_dzimums, class: "form-control", placeholder: "Vakcinētās personas dzimums", :required => true  %>
-    <label for="floatingInput">Vakcinētās personas dzimums</label>
   </div>
 
   <br/>
 
-  <div class="field form-floating">
+  <div class="field form-group">
       <%= form.number_field :pers_skaits, class: "form-control", placeholder: "Vakcinēto personu skaits", :required => true  %>
-    <label for="floatingInput">Vakcinēto personu skaits</label>
   </div>
 
 

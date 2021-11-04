@@ -7,7 +7,7 @@ class Vacin < ApplicationRecord
   validates :vacin_type, presence: true
   validates :preparat, presence: true
   validates :vacin_posms, presence: true
-  validates :vacin_kartas_num, presence: true, format: {with: /\A\d\Z/, message: ',- Ievadiet tikai vienu skaitli'}
+  validates :vacin_kartas_num, presence: true, format: {with: /\A\d\Z/, message: '- Ievadiet tikai vienu skaitli'}
   validates :prep_daudz, presence: true, format: {with: /\A([0-9][.][0-9]+|[0-9])\Z/, message: '- Ievadiet tikai vienu veselo skaitli vai decimalo skaitli'}
   validates :vakcin_ievade, presence: true
   validates :indik_vakcin, presence: true

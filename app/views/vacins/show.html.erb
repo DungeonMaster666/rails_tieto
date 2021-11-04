@@ -1,71 +1,85 @@
 
-<p>
-  <strong>Vakcinācijas iestādes kods:</strong>
-  <%= @vacin.iestade_id %>
+
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><strong>Vakcinācijas iestādes kods:</strong></td>
+    <td><%= @vacin.iestade_id %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcinācijas iestādes nosaukums:</strong></td>
+    <td><%= @vacin.iest_nos %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcinācijas datums YYYY-MM-DD:</strong></td>
+    <td><%= @vacin.vacin_date %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcīnas veids:</strong></td>
+    <td><%= @vacin.vacin_type %></td>
+  </tr>
+  <tr>
+    <td><strong>Preparāts:</strong></td>
+    <td> <%= @vacin.preparat %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcinācijas posms:</strong></td>
+    <td><%= @vacin.vacin_posms %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcīnas kārtas numurs:</strong></td>
+    <td><%= @vacin.vacin_kartas_num %></td>
+  </tr>
+  <tr>
+    <td><strong>Preparāta daudzums ml:</strong></td>
+    <td> <%= @vacin.prep_daudz %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcīnas ievadīšanas veids:</strong></td>
+    <td> <%= @vacin.vakcin_ievade %></td>
+  </tr>
+  <tr>
+    <td><strong>Indikācijas vakcinācijai:</strong></td>
+    <td> <%= @vacin.indik_vakcin %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcinētās personas vecums:</strong></td>
+    <td> <%= @vacin.pers_age %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcinētās personas dzimums:</strong></td>
+    <td> <%= @vacin.pers_dzimums %></td>
+  </tr>
+  <tr>
+    <td><strong>Vakcinēto personu skaits:</strong></td>
+    <td> <%= @vacin.pers_skaits %></td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+
 </p>
 
 <p>
-  <strong>Vakcinācijas iestādes nosaukums:</strong>
-  <%= @vacin.iest_nos %>
+
+
 </p>
 
 <p>
-  <strong>Vakcinācijas datums YYYY-MM-DD:</strong>
-  <%= @vacin.vacin_date %>
-</p>
 
-<p>
-  <strong>Vakcīnas veids:</strong>
-  <%= @vacin.vacin_type %>
-</p>
 
-<p>
-  <strong>Preparāts:</strong>
-  <%= @vacin.preparat %>
-</p>
-
-<p>
-  <strong>Vakcinācijas posms:</strong>
-  <%= @vacin.vacin_posms %>
-</p>
-
-<p>
-  <strong>Vakcīnas kārtas numurs:</strong>
-  <%= @vacin.vacin_kartas_num %>
-</p>
-
-<p>
-  <strong>Preparāta daudzums ml:</strong>
-  <%= @vacin.prep_daudz %>
-</p>
-
-<p>
-  <strong>Vakcīnas ievadīšanas veids:</strong>
-  <%= @vacin.vakcin_ievade %>
-</p>
-
-<p>
-  <strong>Indikācijas vakcinācijai:</strong>
-  <%= @vacin.indik_vakcin %>
-</p>
-
-<p>
-  <strong>Vakcinētās personas vecums:</strong>
-  <%= @vacin.pers_age %>
-</p>
-
-<p>
-  <strong>Vakcinētās personas dzimums:</strong>
-  <%= @vacin.pers_dzimums %>
-</p>
-
-<p>
-  <strong>Vakcinēto personu skaits:</strong>
-  <%= @vacin.pers_skaits %>
 </p>
 
 <% if @vacin.user == current_user %>
-  <%= link_to 'Edit', edit_vacin_path(@vacin) %> |
+  <%= link_to 'Rediģēt', edit_vacin_path(@vacin), class: "btn btn-secondary" %>
   <% end %>
-  <%= link_to 'Back', vacins_path %>
+  <%= link_to 'Uz Vakcinām', vacins_path, class: "btn btn-info" %>
 
