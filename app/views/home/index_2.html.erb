@@ -3,12 +3,15 @@
 <br/>
 
 <div class="container-fluid bg-light">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12">
     <div class="row">
       <div class="col">
         <%= area_chart (@hash_dates),discrete: true,
                        title: 'Vakcinācijas aktivitāte', download: { filename: 'coolGraph5' },
                        xtitle: 'Datums', ytitle: 'Vakcinēto skaits', height: '500px', colors: ["#ab1fb8"]%>
+        <h6>Pēdejo reizi atjaunots: <%= Plot.where(plot_name: 'Graph5').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <br/>
+
       </div>
     </div>
   </div>
@@ -20,11 +23,14 @@
 <br/>
 
 <div class="container-fluid bg-light">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12">
     <div class="row">
       <div class="col">
         <%= bar_chart (@hash_iestades_nos), title: 'Visapmeklējamie vakcinācijas iestādes un to filiāli pēc vakcinēto skaita',
                       download: { filename: 'coolGraph6' }, height: '1000px' %>
+        <h6>Pēdejo reizi atjaunots: <%= Plot.where(plot_name: 'Graph6').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <br/>
+
       </div>
     </div>
   </div>

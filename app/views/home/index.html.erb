@@ -3,13 +3,14 @@
 <br/>
 
 <div class="container-fluid bg-light">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12">
     <div class="row">
       <div class="col">
 <%= line_chart ([{name: '0.3 ml',data: @hash_zerothree},{name: '0.5 ml',data: @hash_zerofive}]),discrete: true,
                title: 'Vakcinēto cilvēku skaits atkarībā no vakcīnas daudzuma', download: { filename: 'coolGraph' },
                xtitle: 'Cilvēku vecums', ytitle: 'Vakcinēto skaits', height: '500px'%>
-        <h6><%= Plot.where(plot_name: 'Graph1').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <h6>Pēdejo reizi atjaunots: <%= Plot.where(plot_name: 'Graph1').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <br/>
       </div>
     </div>
 
@@ -25,12 +26,15 @@
 <br/>
 
 <div class="container-fluid bg-light">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 ">
     <div class="row">
       <div class="col">
 <%= line_chart ([{name: 'S',data: @hash_sex_s},{name: 'V',data: @hash_sex_v}]),discrete: true,
                title: 'Vakcinēto cilvēku skaits atkarībā no dzimuma', download: { filename: 'coolGraph2' },
                xtitle: 'Cilvēku vecums', ytitle: 'Vakcinēto skaits', height: '500px', colors: ["#ab1fb8","#00ed2b"]%>
+        <h6>Pēdejo reizi atjaunots: <%= Plot.where(plot_name: 'Graph2').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <br/>
+
       </div>
     </div>
   </div>
@@ -42,11 +46,14 @@
 <br/>
 
 <div class="container-fluid bg-light">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 ">
     <div class="row">
       <div class="col">
 <%= pie_chart (@hash_indikacijas), donut: true, title: 'Vakcinēto cilvēku skaits atkarībā no vakcinācijas cēloņa',
               download: { filename: 'coolGraph3' }, height: '700px' %>
+        <h6>Pēdejo reizi atjaunots: <%= Plot.where(plot_name: 'Graph3').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <br/>
+
       </div>
     </div>
   </div>
@@ -58,11 +65,14 @@
 <br/>
 
 <div class="container-fluid bg-light">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 ">
     <div class="row">
       <div class="col">
         <%= bar_chart (@hash_vakcina), title: 'Vakcinēto skaits atkarībā no izmantojamas vakcīnas ',
                       download: { filename: 'coolGraph4' }, height: '500px' %>
+        <h6>Pēdejo reizi atjaunots: <%= Plot.where(plot_name: 'Graph4').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
+        <br/>
+
       </div>
     </div>
   </div>

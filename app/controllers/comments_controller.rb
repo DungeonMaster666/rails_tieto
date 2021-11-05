@@ -1,12 +1,16 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[show edit update destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:show]
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.all
-
+    # id 2 - is admin
+    if current_user.id == 2
+      @comments = Comment.all
+    else
+      redirect_to home_about_path
+    end
   end
 
 
@@ -21,8 +25,6 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1/edit
-  def edit
-  end
 
   # POST /comments or /comments.json
   def create
@@ -64,6 +66,10 @@ class CommentsController < ApplicationController
   def correct_user
     @comment = current_user.comments.find_by(id: params[:id])
     redirect_to comments_path, notice: "Nav tiesību rediģēt" if @comment.nil?
+  end
+
+  def admin
+
   end
 
   private

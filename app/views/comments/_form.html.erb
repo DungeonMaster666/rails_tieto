@@ -5,8 +5,6 @@
   <div class="card">
     <h5 class="card-header"><%= pluralize(comment.errors.count, "kļūda") %> nedod saglabāt komentāru:</h5>
     <div class="card-body">
-      <div id="error_explanation">
-      </div>
       <p class="card-text">
       <ul>
         <% comment.errors.each do |error| %>
@@ -19,29 +17,28 @@
 
   <% end %>
   <br/><br/>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-header">
-            <h2>Pievienot Kommentāru</h2>
-          </div>
-          <div class="card-body">
-            <br/>
 
-            <div class="field">
-              <%= form.text_area :comment_text, class: "form-control", placeholder: "Komentāra teksts", :required => true, size: '70x5', maxlength: '254' %>
-            </div>
-            <br/>
-            <div class="actions">
-              <%= form.submit "Pievienot Kommentāru", class:'btn btn-primary'%>
-
-              <br/><br/>
-
-            </div>
-            <%= link_to 'Atpakaļ uz Statistiku', home_index_path, class: "btn btn-secondary" %>
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-header">
+          <h2>Pievienot Kommentāru</h2>
         </div>
+        <div class="card-body">
+          <br/>
+
+          <div class="field">
+            <%= form.text_area :comment_text, class: "form-control", placeholder: "Komentāra teksts", :required => true, size: '70x5', maxlength: '254' %>
+          </div>
+          <br/>
+          <div class="actions">
+            <%= form.submit "Pievienot Kommentāru", class:'btn btn-primary'%>
+            <br/><br/>
+          </div>
+          <%= link_to 'Atpakaļ uz Statistiku', home_index_path, class: "btn btn-secondary" %>
+        </div>
+
 
         <div class="field">
           <% form.label :plot_id %>
@@ -53,15 +50,12 @@
           <% form.number_field :user_id, id: :comment_user_id, value: current_user.id, type: :hidden %>
         </div>
       </div>
-      <div class="col">
-        <%= show_svg('coool.svg') %>
-
-      </div>
-
     </div>
+      <div class="col">
+      <%= image_tag('/icon.svg', class: 'image-svg') %>
+      </div>
   </div>
-
-
+</div>
 
 
 
