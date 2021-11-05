@@ -1,24 +1,26 @@
 
+<br/><br/>
+<div class="card text">
+  <div class="card-header">
+  Kommentārs
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= User.find_by_id(current_user).email %></h5>
+    <br/>
+    <p class="card-text"><%= @comment.comment_text %></p>
 
-<p>
-  <strong>Comment plot:</strong>
-  <%= @comment.plot_id %>
-</p>
+  </div>
+  <div class="card-footer text-muted">
+    <a>Izveidots: </a><%= @comment.created_at.strftime("%H:%M %d.%m.%Y") %><p></p>
+    <a>Pēdejo reizi izmainīts: </a><%= @comment.updated_at.strftime("%H:%M %d.%m.%Y") %>
 
-<p>
-  <strong>Comment user:</strong>
-  <%= User.find_by_id(current_user).email %>
-</p>
+    <br/><br/>
 
-<p>
-  <strong>Comment text:</strong>
-  <%= @comment.comment_text %>
-</p>
+    <%= link_to 'Rediģēt', edit_comment_path(@comment), class: "btn btn-warning" %>
+    <%= link_to 'Uz Statistiku', home_index_path, class: "btn btn-secondary" %>
+  </div>
 
-<p>
-  <strong>Comment date:</strong>
-  <%= @comment.created_at %>
-</p>
+</div>
 
-<%= link_to 'Rediģēt', edit_comment_path(@comment), class: '' %> |
-<%= link_to 'Uz Statistiku', home_index_path %>
+
+

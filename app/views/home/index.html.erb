@@ -9,7 +9,7 @@
 <%= line_chart ([{name: '0.3 ml',data: @hash_zerothree},{name: '0.5 ml',data: @hash_zerofive}]),discrete: true,
                title: 'Vakcinēto cilvēku skaits atkarībā no vakcīnas daudzuma', download: { filename: 'coolGraph' },
                xtitle: 'Cilvēku vecums', ytitle: 'Vakcinēto skaits', height: '500px'%>
-        <h6><%= Plot.where(plot_name: 'Graph1').select(:plot_name) %></h6>
+        <h6><%= Plot.where(plot_name: 'Graph1').first.plot_updated_time.strftime("%H:%M %d.%m.%Y") %></h6>
       </div>
     </div>
 
